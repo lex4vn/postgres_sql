@@ -1,0 +1,16 @@
+select * from sale_order so where state in ('done') and state_btt in ('invoice', 'shipping', 'completed')
+
+
+TRUNCATE TABLE public.az_sync_sale_stock CONTINUE IDENTITY RESTRICT;
+
+
+update sale_order set origin = null where state in ('sale', 'draft', 'done') and state_btt in ('invoice', 'shipping', 'completed')
+
+
+
+select * from sale_order so where name = '2021.02745'
+
+select * from sale_order_line sol  where order_id = 53474
+
+
+select * from az_sync_sale_stock asss where sale_id = 53474
